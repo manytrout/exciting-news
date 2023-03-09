@@ -11,7 +11,7 @@
 
     <meta name="description" content="This is a news site with very exciting news.">
 
-    <title>Exciting News</title>
+    <title>Broccoli News</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,12 +33,13 @@
 
         <header class="site-header">
 
-            <!-- Maybe put some sort of logo thing here. -->
-            <p>Placeholder Logo</p>
+           <img src="images/broccoli-news-logo-pic.png" class="logo-pic">
+
+           <!-- Not sure if I like the logo pic I attempted to make in photoshop or not, lol... -->
 
             <button class="hamburger-menu" id="btn-menu">
                 <span class="hamburger-menu-content" tabindex="-1">
-                  <span class="sr-only">Menu</span>
+                  <span class="screen-reader-text">Menu</span>
                   <span class="bar" id="bar"></span>
                   <span class="bar" id="bar"></span>
                   <span class="bar" id="bar"></span>
@@ -65,14 +66,23 @@
 
         <header class="page-header">
 
-            <h1>Exciting News</h1>
+            <h1>Broccoli News</h1>
 
         </header>   
 
         <!-- all these IDs can be changed later as we want to they are just so i can imagine where they might go on the page -->
         
         <section id="headline-main">
-            <article></article>
+
+            <figure>
+                <img src="images/broccoli-on-plate.jpg" alt="Broccoli on a plate">
+            </figure>
+
+            <article class="headline-article">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis porro suscipit amet laudantium adipisci. Placeat dolore dignissimos consectetur nemo veritatis laboriosam? Error ipsa ullam sequi, id explicabo provident magnam obcaecati? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis reiciendis enim optio amet aut mollitia, neque unde magni dolore quas cupiditate, animi maxime pariatur, dolores consequatur earum sed alias cum.</p>
+            </article>
+
         </section>
 
         <section id="sidebar-weather">
@@ -81,13 +91,25 @@
         </section>
 
         <section id="sidebar-local-interest">
+            <figure>
+                <img src="images/dinner-time.jpg" alt="Dinner plates full of food on a table">
+            </figure>
             <article></article>
+            <figure>
+                <img src="images/kid-biting-broccoli.jpg" alt="A young boy biting into broccoli">
+            </figure>
             <article></article>
             <article></article>
         </section>    
 
         <section id="headline-secondary">
+            <figure>
+                <img src="images/couple-cutting-broccoli.jpg" alt="A couple of women smiling together and cutting broccoli">
+            </figure>
             <article></article>
+            <figure>
+                <img src="images/girl-with-broccoli-on-head.jpg" alt="A woman holding broccoli on the top of her head and making a silly face">
+            </figure>
             <article></article>
             <article></article>
             <article></article>
@@ -116,7 +138,8 @@
             </ul>
         </nav>
 
-        <p>Site created for educational purposes (FWD33).</p>  
+        <p>&#169; Broccoli News - 2023<br>
+        Site created for educational purposes (FWD33).</p>  
 
     </footer>
 

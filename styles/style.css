@@ -1,10 +1,8 @@
-/********** General Layout **********/
+/* To be added for the assignment - Requirements:
 
-/* To be added for the assignment - Reqeuirements:
-
-- 3 or more custom CSS properties
+- 3 or more custom CSS properties (Done!)
 - 1 or more instance of each of the following: 
-    * Descendant
+    * Descendant (Done!)
     * Child
     * Adjacent
     * General Sibling
@@ -13,50 +11,54 @@
 - At least one of the following CSS technologies (one of each or one of this list?):
     * CSS transitions
     * CSS animations
-    * Css transforms
+    * CSS transforms
 - Web page must be fully responsive and be usable between screen width of 320px and 1920px.
 - Make sure everything is merged into the main branch before submitting assignment.  */
 
+/********** Global Variables **********/
+
+:root {
+	--brand-color: #04760e;  /* Random shades of green, can be changed later */
+	--text-color: #0b3300;
+	--banner-color: #badcb7;
+	--background-color: #f0f6ef;
+	--box-shadow: 0 0.25rem 0.125rem -0.125rem #808080c9;
+}
+
+/********** General Layout **********/
+
 body {
     /* Just some placeholder stuff for now */  
-    background-color: #ffffff; 
+    background-color: var(--background-color);
     font-family: "Montserrat", sans-serif;
-    color: #000000;
+    color: var(--text-color);
     font-size: 1.25rem;
     line-height: 1.75rem;
 }
+
 .site-wrapper {
 	max-width: 120rem;
 	margin: 0 auto;
 }
 
+main {
+	padding: 0 1rem;
+}
+
 a,
 a:visited { 
-	color: #000000;
+	color: var(--text-color);
 	text-decoration: none;
 }
 
 a:hover,
 a:focus {
-	color: #646464;
+	color: var(--brand-color);
 	text-decoration: underline;
 }
 
 a:active {
-	color: #646464;
-}
-
-/* Utility Class - Pasted from Assignment #2 */
-
-.sr-only {
-    position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
-    margin: -0.0625rem;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+	color: var(--text-color);
 }
 
 /********** Site Header & Navigation **********/
@@ -67,9 +69,16 @@ a:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 1rem .5rem;
     height: 6rem;
-    background-color: #cbcbcb;
+    background-color: var(--banner-color);
+	box-shadow: var(--box-shadow);
+}
+
+.site-header .logo-pic {
+	position: relative;
+	right: 0;
+	border-radius: 1rem;
 }
 
 .hamburger-menu {
@@ -83,7 +92,7 @@ a:active {
 
 .bar {
 	position: absolute;
-	background: black;
+	background: var(--text-color);
 	width: 100%;
 	height: 0.3125rem;
 	top: 50%;
@@ -94,7 +103,7 @@ a:active {
 
 .bar::before {
 	position: absolute;
-	background: black;
+	background: var(--text-color);
 	width: 2rem;
 	height: 0.3125rem;
 	top: .5rem;
@@ -104,7 +113,7 @@ a:active {
 
 .bar::after {
 	position: absolute;
-	background: black;
+	background: var(--text-color);
 	width: 2rem;
 	height: 0.3125rem;
 	bottom: .5rem;
@@ -140,14 +149,17 @@ a:active {
 
 #site-navigation li {
 	list-style: none;
+	text-shadow: 2px 4px 10px #ffffff79;
 }
 
 #site-navigation a {
 	display: block;
 	text-decoration: none;
 	padding: 2rem;
-	color: black;
-	font-weight: bold;
+	color: var(--text-color);
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 
 #site-navigation {
@@ -190,16 +202,35 @@ a:active {
 	#site-navigation a:hover,
 	#site-navigation a:focus,
 	#site-navigation a:active {
-		background-color: black;
-		color: white;
+		background-color: var(--text-color);
+		color: var(--background-color);
 	}
 
 } 
 
+/********** Main Content **********/
+
+#headline-main {
+	display: flex;
+	border-radius: 1rem;
+	box-shadow: 0 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.112);
+	max-width: 70rem;
+	padding: 1rem;
+}
+
+#headline-main p {
+	font-size: 1rem;
+}
+
+.headline-article {
+	max-width: 30rem;
+}
+
+
 /********** Site Footer **********/
 
 footer {
-    background-color: #cbcbcb;
+    background-color: var(--banner-color);
     font-size: 1rem;
 	padding: 1rem;
 	margin: 0 auto;
