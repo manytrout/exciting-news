@@ -9,10 +9,10 @@
     * Attribute Selector
     * Any of the following pseudo selectors: :first-child, :last-child, :nth-child()
 - At least one of the following CSS technologies (one of each or one of this list?):
-    * CSS transitions
+    * CSS transitions (Done! h2 changes on hover)
     * CSS animations
     * CSS transforms
-- Web page must be fully responsive and be usable between screen width of 320px and 1920px.
+- Web page must be fully responsive and be usable between screen width of 320px and 1920px. (Close to being done, I hope? there is some oddness along the sides, i think it's in site-main.)
 - Make sure everything is merged into the main branch before submitting assignment.  */
 
 /********** Global Variables **********/
@@ -61,6 +61,16 @@ a:active {
 	color: var(--text-color);
 }
 
+h2 {
+	transition-property: font-size, var(--text-color);
+	transition-duration: .3s;
+	transition-delay: 0s;
+}
+
+h2:hover{
+	font-size: 1.512em;
+	color:#0c3900
+}
 /********** Site Header & Navigation **********/
 
 /* Just pasted this from the last assignment for now -- Hamburger Menu CSS code based on: https://codepen.io/nelsonswork/pen/XbbJVx */
@@ -212,10 +222,14 @@ a:active {
 
 #headline-main {
 	display: flex;
+	flex-direction: column;
 	border-radius: 1rem;
 	box-shadow: 0 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.112);
 	max-width: 70rem;
 	padding: 1rem;
+	align-items: center;
+    justify-content: center;
+	
 }
 
 #headline-main p {
@@ -223,8 +237,39 @@ a:active {
 }
 
 .headline-article {
-	max-width: 30rem;
+	max-width: 90vw;
 }
+
+.headline-image {
+	width: 90vw;
+}
+
+/* added media query to head in the direction of responsive */
+@media (min-width: 62.5rem) {
+	#headline-main {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 90vw;
+		justify-content: center;
+		align-items: baseline;
+		margin: 1rem;
+		padding: .5rem;
+	}
+
+	.headline-image {
+		max-width: calc(100% - 20px);
+		margin: 0 1rem;
+		
+	}
+
+	.headline-article {
+		max-width: calc(90% - 40px);
+		margin: 2rem 4rem;
+	}
+}
+
+
 
 
 /********** Site Footer **********/
