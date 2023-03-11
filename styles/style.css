@@ -3,16 +3,16 @@
 - 3 or more custom CSS properties (Done!)
 - 1 or more instance of each of the following: 
     * Descendant (Done!)
-    * Child
+    * Child (done!)
     * Adjacent
-    * General Sibling
-    * Attribute Selector
-    * Any of the following pseudo selectors: :first-child, :last-child, :nth-child()
+    * General Sibling (done!)
+    * Attribute Selector (done!)
+    * Any of the following pseudo selectors: :first-child, :last-child, :nth-child(). (done!)
 - At least one of the following CSS technologies (one of each or one of this list?):
     * CSS transitions (Done! h2 changes on hover)
     * CSS animations
     * CSS transforms
-- Web page must be fully responsive and be usable between screen width of 320px and 1920px. (Close to being done, I hope? there is some oddness along the sides, i think it's in site-main.)
+- Web page must be fully responsive and be usable between screen width of 320px and 1920px. (Close to being done, I hope? there is some oddness along the sides sometimes.)
 - Make sure everything is merged into the main branch before submitting assignment.  */
 
 /********** Global Variables **********/
@@ -21,6 +21,7 @@
 	--brand-color: #04760e;  /* Random shades of green, can be changed later */
 	--text-color: #0b3300;
 	--banner-color: #badcb7;
+	--alternating-color-odd: #eaf1ea;
 	--background-color: #f0f6ef;
 	--box-shadow: 0 0.25rem 0.125rem -0.125rem #808080c9;
 }
@@ -61,6 +62,11 @@ a:active {
 	color: var(--text-color);
 }
 
+/* not sure what to do about h1, if it's not 1.1 then at 320w the bottom of the first line touches the top of the second line*/
+h1 {
+	line-height: 1.1;
+}
+
 h2 {
 	transition-property: font-size, var(--text-color);
 	transition-duration: .3s;
@@ -70,6 +76,27 @@ h2 {
 h2:hover{
 	font-size: 1.512em;
 	color:#0c3900
+}
+
+img[alt*="broc"] {
+	border: 1px solid var(--brand-color);
+}
+
+/* https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/
+this only targets sectons after headline-main */
+section ~ section {
+		--auto-grid-min-size: 16rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
+		grid-gap: .3rem;
+		justify-items: center;
+	  }
+
+
+figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 /********** Site Header & Navigation **********/
 
@@ -162,6 +189,12 @@ h2:hover{
 	text-shadow: 2px 4px 10px #ffffff79;
 }
 
+li:nth-child(odd) {
+	background-color: var(--alternating-color-odd);
+}
+
+
+
 #site-navigation a {
 	display: block;
 	text-decoration: none;
@@ -188,6 +221,8 @@ h2:hover{
 	transform: translateY(4.5rem);
 	background-color: whitesmoke;
 } 
+
+
 
 @media (min-width: 62.5rem) {
 
@@ -268,10 +303,11 @@ fixed some flex issues*/
 		width: 90vw;
 		margin: 1rem;
 	}
+
+	li:nth-child(odd) {
+		background-color: var(--banner-color)
+	}
 }
-
-
-
 
 /********** Site Footer **********/
 
