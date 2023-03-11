@@ -4,7 +4,7 @@
 - 1 or more instance of each of the following: 
     * Descendant (Done!)
     * Child (done!)
-    * Adjacent
+    * Adjacent (done, I think!)
     * General Sibling (done!)
     * Attribute Selector (done!)
     * Any of the following pseudo selectors: :first-child, :last-child, :nth-child(). (done!)
@@ -24,6 +24,7 @@
 	--alternating-color-odd: #eaf1ea;
 	--background-color: #f0f6ef;
 	--box-shadow: 0 0.25rem 0.125rem -0.125rem #808080c9;
+	--all-shadow: 0 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.112);
 }
 
 /********** General Layout **********/
@@ -55,36 +56,36 @@ a:visited {
 a:hover,
 a:focus {
 	color: var(--brand-color);
-	text-decoration: underline;
 }
 
 a:active {
 	color: var(--text-color);
 }
 
-/* not sure what to do about h1, if it's not 1.1 then at 320w the bottom of the first line touches the top of the second line*/
-h1 {
-	line-height: 1.1;
-}
-
 h2 {
+	font-size: 1.75rem;
 	transition-property: font-size, var(--text-color);
 	transition-duration: .3s;
 	transition-delay: 0s;
 }
 
 h2:hover{
-	font-size: 1.512em;
+	font-size: 1.76rem;
 	color:#0c3900
 }
 
-img[alt*="broc"] {
+h3 {
+	font-size: 1.15rem;
+	color: var(--brand-color);
+}
+
+img[alt*="broccoli"] {
 	border: 1px solid var(--brand-color);
 }
 
 /* https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/
 this only targets sectons after headline-main */
-section ~ section {
+/* section ~ section {
 		--auto-grid-min-size: 16rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
@@ -92,17 +93,23 @@ section ~ section {
 		justify-items: center;
 	  }
 
+*/
 
+/*
 figure > img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
+
+*/
 /********** Site Header & Navigation **********/
 
 /* Just pasted this from the last assignment for now -- Hamburger Menu CSS code based on: https://codepen.io/nelsonswork/pen/XbbJVx */
 
 .site-header {
+	max-width: 120rem;
+	margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,12 +117,65 @@ figure > img {
     height: 6rem;
     background-color: var(--banner-color);
 	box-shadow: var(--box-shadow);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
-.site-header .logo-pic {
+.logo-and-text {
+	display: flex;
+	align-items: center;
+}
+
+.logo-and-text p {
+	font-size: 2.5rem;
+	font-family: "Domine", serif;
+	font-weight: 700;
+	padding-top: .75rem;
+	padding-bottom: .25rem;
+	margin: 0 1rem;
+	border-bottom: .25rem solid var(--background-color);
+}
+
+.logo-and-text p + p {
+	font-size: .89rem;
+	font-family: "Domine", serif;
+	font-weight: 400;
+	padding: 0;
+	margin: 0 1rem;
+	border: none;
+}
+
+.logo-pic {
 	position: relative;
 	right: 0;
-	border-radius: 1rem;
+	box-shadow: var(--all-shadow);
+	width: 4.6875rem;
+	height: 4.75rem;
+	padding: .25rem;
+	border-radius: .5rem;
+	margin: 1rem .5rem .5rem;
+}
+
+@media (max-width: 31.25em) {
+	.logo-and-text p {
+		font-size: 1.5rem;
+	}
+
+	.logo-and-text p + p {
+		font-size: .6rem;
+	}
+
+	.logo-pic {
+		display: none;
+	}
+
+}
+
+.logo-pic:hover {
+	background-color: var(--background-color);
+	transition: background-color 0.5s ease-out;
 }
 
 .hamburger-menu {
@@ -193,16 +253,14 @@ li:nth-child(odd) {
 	background-color: var(--alternating-color-odd);
 }
 
-
-
 #site-navigation a {
 	display: block;
 	text-decoration: none;
 	padding: 2rem;
 	color: var(--text-color);
 	font-size: 1rem;
-	font-weight: 500;
-	text-transform: uppercase;
+	font-weight: 700;
+	font-family: "Domine", serif;
 }
 
 #site-navigation {
@@ -213,7 +271,7 @@ li:nth-child(odd) {
 	display: block; 
 	position: absolute;
 	text-align: center;
-	top: 0;
+	top: 1.5rem;
 	right: 0;
 	height: auto;
 	width: 100%;
@@ -222,9 +280,7 @@ li:nth-child(odd) {
 	background-color: whitesmoke;
 } 
 
-
-
-@media (min-width: 62.5rem) {
+@media (min-width: 72.5rem) {
 
 	.hamburger-menu {
 		display: none;
@@ -235,7 +291,10 @@ li:nth-child(odd) {
 	}
 
 	#site-navigation a {
-		padding: .75rem 1.25rem;
+		padding: .5rem 1rem;
+		background-color: var(--background-color);
+		border-radius: 1rem;
+		margin: .25rem;
 	}
 
 
@@ -248,6 +307,7 @@ li:nth-child(odd) {
 	#site-navigation a:focus,
 	#site-navigation a:active {
 		background-color: var(--text-color);
+		transition: background-color 0.2s ease;
 		color: var(--background-color);
 	}
 
@@ -255,16 +315,27 @@ li:nth-child(odd) {
 
 /********** Main Content **********/
 
+.top-flex {
+	display: flex;
+	max-width: 120rem;
+	width: 100%;
+}
+
 #headline-main {
+	width: 70%;
+	margin-top: 8rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 1rem;
-	box-shadow: 0 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.112);
-	max-width: 70rem;
+	box-shadow: var(--all-shadow);
 	padding: 1rem;
 	align-items: center;
-    justify-content: center;
-	
+    justify-content: flex-start;
+	background: url(../images/broccoli-background.jpg)no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color:#badcb7cf;
+	background-blend-mode: screen;
 }
 
 #headline-main p {
@@ -273,40 +344,92 @@ li:nth-child(odd) {
 
 .headline-article {
 	max-width: 90vw;
-}
+	margin: 1rem;
+	padding: 2rem;
+	border-radius: 1rem;
+	background-color: var(--background-color);
+} 
 
 .headline-image {
 	max-width: 80vw;
-	margin: 0; 
-}
+	margin: 0 auto; 
+} 
 
 /* added media query to move in the direction of responsive. 
 fixed some flex issues*/
-@media (min-width: 62.5rem) {
+@media (min-width: 90.625rem) {
 	#headline-main {
 		display: flex;
-		max-width: 95vw;
 		flex-direction: row;
 		justify-content: space-evenly;
-		margin: 1rem auto;
+		margin: 8rem 0 1rem;
 		padding: .5rem;
 	}
 
 	.headline-image {
-
 		max-width: 90vw;
 		margin: 0;
-		
-	}
-
-	.headline-article {
-		width: 90vw;
-		margin: 1rem;
 	}
 
 	li:nth-child(odd) {
 		background-color: var(--banner-color)
 	}
+}
+
+.trending {
+	margin: 8rem 1rem 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--all-shadow);
+	width: 30%;
+	padding: 2rem 1rem;
+	font-size: 1rem;
+}
+
+.trending h2 {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.trending p {
+	background-color: #ffffff;
+}
+
+.grid-article {
+	padding: 1rem;
+	box-shadow: var(--all-shadow);
+	background-color: #ffffffa0;
+	border-radius: 1rem;
+}
+
+.grid-article figure {
+	margin: 0 auto;
+	display: block;
+}
+
+.grid-article img {
+	margin: 0 auto;
+	display: block;
+	max-width: 18rem;
+}
+
+#headline-secondary {
+	max-width: 120rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+	gap: 2rem .5rem;
+	justify-content: space-between;
+	padding-bottom: 3rem;
+	padding-top: 2rem;
+}
+
+.grid-article h3 {
+	margin: 1rem auto;
+	padding-left: 1rem;
+}
+
+.grid-article p {
+	padding-left: 1rem;
+	font-size: .85rem;
 }
 
 /********** Site Footer **********/
@@ -332,6 +455,7 @@ footer {
 	padding: 0 .25rem;
 	list-style: none;
 	display: inline-block;
+	background: none;
 }
 
 .footer-icons svg {
@@ -343,6 +467,3 @@ footer {
 .footer-icons path {
 	fill: currentColor;
 }
-
-
-
