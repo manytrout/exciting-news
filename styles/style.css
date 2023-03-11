@@ -241,31 +241,32 @@ h2:hover{
 }
 
 .headline-image {
-	width: 90vw;
+	max-width: 80vw;
+	margin: 0; 
 }
 
-/* added media query to head in the direction of responsive */
+/* added media query to move in the direction of responsive. 
+fixed some flex issues*/
 @media (min-width: 62.5rem) {
 	#headline-main {
 		display: flex;
+		max-width: 95vw;
 		flex-direction: row;
-		flex-wrap: wrap;
-		max-width: 90vw;
-		justify-content: center;
-		align-items: baseline;
-		margin: 1rem;
+		justify-content: space-evenly;
+		margin: 1rem auto;
 		padding: .5rem;
 	}
 
 	.headline-image {
-		max-width: calc(100% - 20px);
-		margin: 0 1rem;
+
+		max-width: 90vw;
+		margin: 0;
 		
 	}
 
 	.headline-article {
-		max-width: calc(90% - 40px);
-		margin: 2rem 4rem;
+		width: 90vw;
+		margin: 1rem;
 	}
 }
 
