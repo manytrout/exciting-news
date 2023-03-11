@@ -11,11 +11,11 @@
 
     <meta name="description" content="This is a news site with very exciting news.">
 
-    <title>Broccoli News</title>
+    <title>Broccoli News: Home to the World's Most Broccin' News!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- I like the Montserrat font, but we can use another one too.  Just added it here for now.  :)  -->
 
@@ -33,7 +33,15 @@
 
         <header class="site-header">
 
-           <img src="images/broccoli-news-logo-pic.png" class="logo-pic">
+           <div class="logo-and-text">
+                <a href="#"><img src="images/broccoli-news-logo-updated.png" class="logo-pic"></a>
+
+                <div class="text-only">
+                    <p>Broccoli News</p>
+                    <p>Home to the World's Most Broccin' News!</p>
+                </div>
+           </div>
+
 
            <!-- Not sure if I like the logo pic I attempted to make in photoshop or not, lol... -->
 
@@ -49,13 +57,12 @@
             <nav class="site-navigation" id="site-navigation">
         
                 <ul class="nav-list" id="nav-list">
-                    <li><a href="#">World</a></li>
-                    <li><a href="#">Canada</a></li>
-                    <li><a href="#">Local</a></li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Money</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Lighthearted</a></li>
                     <li><a href="#">Health</a></li>
-                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Cooking</a></li>
                 </ul>
 
             </nav>
@@ -64,46 +71,127 @@
 
         <main id="#site-main"> 
 
-        <header class="page-header">
-
-            <h1>Broccoli News</h1>
-
-        </header>   
+        <div class="top-flex">
         
         <section id="headline-main">
 
             <figure>
-                <img class="headline-image" src="images/broccoli-on-plate.jpg" alt="Broccoli on a plate">
+                <img class="headline-image" src="images/broccoli-on-plate.jpg" alt="A broccoli head on a plate">
             </figure>
 
             <article class="headline-article">
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis porro suscipit amet laudantium adipisci. Placeat dolore dignissimos consectetur nemo veritatis laboriosam? Error ipsa ullam sequi, id explicabo provident magnam obcaecati? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis reiciendis enim optio amet aut mollitia, neque unde magni dolore quas cupiditate, animi maxime pariatur, dolores consequatur earum sed alias cum.</p>
+                <h2><a href="#">New Studies Show That Eating Broccoli Can Improve Your Health in Surprising Ways</a></h2>
+                <h3>General  | Health  |  5 Hours Ago</h3>
+                <p>Broccoli has long been known as a healthy food, but new studies are revealing just how beneficial it can be for your health. According to research published in the Journal of Nutrition and Dietetics, regular consumption of broccoli can have a range of positive effects on the body, from reducing inflammation to improving gut health.  One study found that eating broccoli can help to lower levels of inflammatory markers in the blood, potentially reducing the risk of chronic diseases like heart disease and cancer...</p>
             </article>
 
         </section>
 
-        <section id="headline-secondary">
-
-            <figure>
-                <img src="images/dinner-time.jpg" alt="Dinner plates full of food on a table">
-            </figure>
-
-            <figure>
-                <img src="images/kid-biting-broccoli.jpg" alt="A young boy biting into broccoli">
-            </figure>
-  
-            <figure>
-                <img src="images/couple-cutting-broccoli.jpg" alt="A couple of women smiling together and cutting broccoli">
-            </figure>
-      
-            <figure>
-                <img src="images/girl-with-broccoli-on-head.jpg" alt="A woman holding broccoli on the top of her head and making a silly face">
-            </figure>
-
+        <section class="trending">
+            <div class="trending-content">
+                <h2>Today's Trending Articles</h2>
+                <ol>
+                    <li>New Studies Show That Eating Broccoli Can Improve Your Health in Surprising Ways</li>
+                    <li>Celebrity chef releases new cookbook featuring broccoli-based recipes</li>
+                    <li>Opinion: Why broccoli is the unsung hero of the vegetable world</li>
+                    <li>World's largest broccoli grown in farmer's backyard, record confirmed</li>
+                    <li>Broccoli: The Eco-Friendly Food Choice for a Sustainable Future</li>
+                    <li>My personal journey to loving broccoli: A story of healthy eating</li>
+                    <li>Broccoli consumption linked to reduced risk of heart disease</li>
+                    <li>Celebrities reveal broccoli as their secret to maintaining a fit body</li>
+                    <li>Local restaurant creates broccoli-themed menu, receives rave reviews</li>
+                    <li>Broccoli sales surge as consumers embrace healthy eating trends</li>
+                </ol>
+            </div>
         </section>
 
+        </div>
 
+        <section id="headline-secondary">
+
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/dinner-time.jpg" alt="Dinner plates full of food (including broccoli) on a table">
+                </figure>
+                <h3><a href="#">Celebrity chef releases new cookbook featuring broccoli-based recipes</a></h3>
+                <p class="article-category">Cooking  |  Health  |  3 Hours Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/kid-biting-broccoli.jpg" alt="A young boy biting into broccoli">
+                </figure>
+                <h3><a href="#">Opinion: Why broccoli is the unsung hero of the vegetable world</a></h3>
+                <p class="article-category">Editorial |  Cooking  |  6 Hours Ago</p>
+                
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/big-broccoli.jpg" alt="A close up picture of broccoli">
+                </figure>
+                <h3><a href="#">World's largest broccoli grown in farmer's backyard, record confirmed</a></h3>
+                <p class="article-category">General |  Lighthearted  |  10 Hours Ago</p>
+            </article>
+    
+            <article class="grid-article">
+                <figure>
+                    <img src="images/couple-cutting-broccoli.jpg" alt="A couple of women smiling together and cutting broccoli">
+                </figure>
+                <h3><a href="#">Broccoli: The Eco-Friendly Food Choice for a Sustainable Future</a></h3>
+                <p class="article-category">General |  Editorial  |  12 Hours Ago</p>
+            </article>
+        
+            <article class="grid-article">
+                <figure>
+                    <img src="images/girl-with-broccoli-on-head.jpg" alt="A woman holding broccoli on the top of her head and making a silly face">
+                </figure>
+                <h3><a href="#">My personal journey to loving broccoli: A story of healthy eating</a></h3>
+                <p class="article-category">Personal |  Health  |  2 Hours Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/girl-on-phone-eating-broccoli.jpg" alt="A woman eating a piece of broccoli and smiling as she looks at her mobile phone">
+                </figure>
+                <h3><a href="#">Broccoli consumption linked to reduced risk of heart disease</a></h3>
+                <p class="article-category">Health |  General |  14 Hours Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/raw-broc-and-veg.jpg" alt="Raw cut up veggies on a cutting board, including broccoli">
+                </figure>
+                <h3><a href="#">Celebrities reveal broccoli as their secret to maintaining a fit body</a></h3>
+                <p class="article-category">Lighthearted |  Health  |  1 Hour Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/broc-and-chicken.jpg" alt="A close up view of a chicken and broccoli dish">
+                </figure>
+                <h3><a href="#">Local restaurant creates broccoli-themed menu, receives rave reviews</a></h3>
+                <p class="article-category">Cooking |  General  |  8 Hours Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/girl-with-broccoli-and-water.jpg" alt="A woman holding broccoli and a glass of water">
+                </figure>
+                <h3><a href="#">Broccoli sales surge as consumers embrace healthy eating trends</a></h3>
+                <p class="article-category">General |  Health  |  20 Hours Ago</p>
+            </article>
+
+            <article class="grid-article">
+                <figure>
+                    <img src="images/chicken-broccoli-rice.jpg" alt="Chicken, broccoli, and rice on a frying pan">
+                </figure>
+                <h3><a href="#">Longtime Broccoli Skeptic Converted by Delicious New Recipe</a></h3>
+                <p class="article-category">Cooking |  Personal |  7 Hours Ago</p>
+            </article>
+
+        </section>
 
     </main>   
 
