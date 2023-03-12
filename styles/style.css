@@ -322,7 +322,8 @@ li:nth-child(odd) {
 	display: flex;
 	flex-direction: column;
 	max-width: 120rem;
-	width: 100%;
+	width: 98%;
+	margin: .25rem;
 }
 
 #headline-main {
@@ -348,8 +349,8 @@ li:nth-child(odd) {
 
 .headline-article {
 	max-width: 90vw;
-	margin: 1rem;
-	padding: 2rem;
+	margin: .5rem;
+	padding: .5rem;
 	border-radius: 1rem;
 	background-color: var(--background-color);
 } 
@@ -367,7 +368,7 @@ fixed some flex issues*/
 		flex-direction: row-reverse;
 		/* flex-wrap: wrap; */
 		justify-content: space-evenly;
-		margin: 8rem 0 1rem;
+		margin: 8rem 0rem 0rem;
 		padding: .5rem;
 	}
 
@@ -397,7 +398,12 @@ fixed some flex issues*/
 	background-color: #ffffff;
 }
 
-@media (min-width: 31.25rem){
+.trending ol li {
+	padding: .25rem;
+}
+
+
+@media (min-width: 41.25rem){
 	.top-flex {
 		flex-direction: row;
 	}
