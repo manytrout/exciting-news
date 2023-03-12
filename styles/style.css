@@ -3,16 +3,16 @@
 - 3 or more custom CSS properties (Done!)
 - 1 or more instance of each of the following: 
     * Descendant (Done!)
-    * Child (done!)
-    * Adjacent (done, I think!)
-    * General Sibling (done!)
-    * Attribute Selector (done!)
-    * Any of the following pseudo selectors: :first-child, :last-child, :nth-child(). (done!)
-- At least one of the following CSS technologies (one of each or one of this list?):
-    * CSS transitions (Done! h2 changes on hover)
+    * Child (Done!)
+    * Adjacent (Done!)
+    * General Sibling 
+    * Attribute Selector (Done!)
+    * Any of the following pseudo selectors: :first-child, :last-child, :nth-child(). (Done!)
+- At least one of the following CSS technologies:
+    * CSS transitions (Done!)
     * CSS animations
     * CSS transforms
-- Web page must be fully responsive and be usable between screen width of 320px and 1920px. (Close to being done, I hope? there is some oddness along the sides sometimes.)
+- Web page must be fully responsive and be usable between screen width of 320px and 1920px. (Done!)
 - Make sure everything is merged into the main branch before submitting assignment.  */
 
 /********** Global Variables **********/
@@ -77,6 +77,10 @@ h2:hover{
 h3 {
 	font-size: 1.15rem;
 	color: var(--brand-color);
+}
+
+h3 ~ p {
+	color:#165904;
 }
 
 img[alt*="broccoli"] {
@@ -260,7 +264,7 @@ li:nth-child(odd) {
 	background-color: whitesmoke;
 } 
 
-@media (min-width: 72.5rem) {
+@media (min-width: 72.5em) {
 
 	.hamburger-menu {
 		display: none;
@@ -330,6 +334,21 @@ li:nth-child(odd) {
 	font-size: 1rem;
 }
 
+@media (max-width: 30em) {
+
+	.headline-article h2 {
+		font-size: 1.125rem;
+	}
+
+	.headline-article h3 {
+		font-size: .8rem;
+	}
+
+	#headline-main .preview-text {
+		font-size: .95rem;
+	}
+}
+
 .headline-article {
 	max-width: 90vw;
 	margin: .5rem;
@@ -342,7 +361,7 @@ li:nth-child(odd) {
 	margin: 0 auto; 
 } 
 
-@media (min-width: 90.625rem) {
+@media (min-width: 90.625em) {
 	#headline-main {
 		display: flex;
 		flex-direction: row-reverse;
@@ -412,8 +431,7 @@ li:nth-child(odd) {
 	align-items: center;
 }
 
-.grid-article {
-	max-width: 18rem;
+#headline-secondary > article {	
 	padding: 1rem;
 	box-shadow: var(--all-shadow);
 	background-color: #ffffffa0;
@@ -431,7 +449,7 @@ li:nth-child(odd) {
 	max-width: 14rem;
 }
 
-@media (min-width: 23.125rem) {
+@media (min-width: 23.125em) {
 
 	.grid-article {
 		max-width: 22rem;
