@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+@mixin bar-common {
+    position: absolute;
+    background: var(--text-color);
+    width: 2rem;
+    height: 0.3125rem;
+    content: "";
+    display: block;
+  }

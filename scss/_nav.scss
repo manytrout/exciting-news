@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .hamburger-menu {
 	border: none;
@@ -10,10 +11,10 @@
 }
 
 .bar {
-	position: absolute;
-	background: var(--text-color);
-	width: 100%;
-	height: 0.3125rem;
+    @include bar-common();
+	// width: 100%; 
+    // i am setting this to two rem in the mixin above
+    // seems equivalent but just in case its not i am leaving a comment
 	top: 50%;
 	right: 0;
 	margin-top: -0.3125rem;
@@ -21,23 +22,13 @@
 }
 
 .bar::before {
-	position: absolute;
-	background: var(--text-color);
-	width: 2rem;
-	height: 0.3125rem;
+	@include bar-common();
 	top: .5rem;
-	content: "";
-	display: block;
 }
 
 .bar::after {
-	position: absolute;
-	background: var(--text-color);
-	width: 2rem;
-	height: 0.3125rem;
+	@include bar-common();
 	bottom: .5rem;
-	content: "";
-	display: block;
 }
 
 .bar::after, .bar::before, .bar {
