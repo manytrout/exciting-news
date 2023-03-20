@@ -93,8 +93,14 @@ h2:hover{
 }
 
 h3 {
+	@extend h2;
 	font-size: 1.15rem;
 	color: var(--brand-color);
+
+	&:hover {
+		@extend h2, :hover;
+		font-size: 1.16rem;
+	}
 }
 
 h3 ~ p {
@@ -250,6 +256,10 @@ img[alt*="broccoli"] {
 
 	.headline-article {
 		max-width: 50%;
+	}
+
+	.headline-article h3:hover {
+		font-size: 1.15rem;
 	}
 }
 

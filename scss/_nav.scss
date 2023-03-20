@@ -76,7 +76,6 @@
 		}
 }
 
-
 li:nth-child(odd) {
 	background-color: var(--alternating-color-odd);
 }
@@ -119,7 +118,6 @@ li:nth-child(odd) {
 		}
 	}
 
-
 	li:nth-child(odd) {
 		background-color: var(--alternating-color-odd);
 	}
@@ -132,6 +130,5 @@ li:nth-child(odd) {
 	#site-navigation.toggled ul {
 		display: flex;
 	}
-
 
 }
